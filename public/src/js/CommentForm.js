@@ -34,6 +34,6 @@ export let CommentForm = React.createClass({
                onChange={this.handleTextChange}/>
         <input type="submit" value="Post"/>
       </form>
-    );
+    )
   }
 });

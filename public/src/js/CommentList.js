@@ -1,6 +1,6 @@
 "use strict";
 import React from 'react';
-import Comment from './Comment'
+import {Comment} from './Comment';
 
 export let CommentList = React.createClass({
   render: function () {
@@ -18,6 +18,6 @@ export let CommentList = React.createClass({
       <div className="commentList">
         {commentNodes}
       </div>
-    );
+    )
   }
 });

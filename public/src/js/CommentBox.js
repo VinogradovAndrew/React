@@ -1,8 +1,7 @@
 "use strict";
 import React from 'react';
-import ReactDOM from 'react-dom';
-import CommentList from './CommentList';
-import CommentForm from './CommentForm';
+import {CommentList} from './CommentList';
+import {CommentForm} from './CommentForm';
 
 
 export let CommentBox = React.createClass({
@@ -54,7 +53,7 @@ export let CommentBox = React.createClass({
         <CommentList data={this.state.data}/>
         <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
       </div>
-    );
+    )
   }
 });
 
