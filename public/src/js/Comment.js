@@ -10,10 +10,11 @@ export let Comment = React.createClass({
   render() {
     return (
       <div className="comment">
-        <h2 className="commentAuthor">
+        <h2 className="commentAuthor" data-comment-id={this.props.id}>
           {this.props.author}
         </h2>
         <span dangerouslySetInnerHTML={this.rawMarkup()}/>
+        <button>delete</button>
       </div>
     )
   }

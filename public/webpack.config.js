@@ -14,11 +14,11 @@ module.exports = {
     },
   module: {
     loaders: [
-      {
+      /*{
         test: /\.jsx?$/,
         exclude: /.spec.js/, // excluding .spec files
         loader: "uglify"
-      },
+      },*/
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,

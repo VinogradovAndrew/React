@@ -57,9 +57,3 @@ export let CommentBox = React.createClass({
   }
 });
 
-/*export let CommentBox = React.createClass({
-  render:function(){
-    "use strict";
-    return (<h1>Privet andreiii</h1>)
-  }
-});*/
