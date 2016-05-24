@@ -3,28 +3,31 @@
 import React from 'react';
 
 export let CommentForm = React.createClass({
-  getInitialState: function () {
+
+  getInitialState() {
     return {author: '', text: ''};
   },
-  handleAuthorChange: function (e) {
+
+  handleAuthorChange(e) {
     this.setState({author: e.target.value});
   },
-  handleTextChange: function (e) {
+
+  handleTextChange(e) {
     this.setState({text: e.target.value});
   },
-  handleSubmit: function (e) {
+
+  handleSubmit(e) {
     e.preventDefault();
-    var author = this.state.author.trim();
-    var text = this.state.text.trim();
+    let author = this.state.author.trim();
+    let text = this.state.text.trim();
     if (!text || !author) {
       return;
     }
     // TODO: send request to the server
-    debugger;
     this.props.onCommentSubmit({author: author, text: text});
-
     this.setState({author: '', text: ''});
   },
+
   render: function () {
     return (
       <form className="commentForm" onSubmit={this.handleSubmit}>

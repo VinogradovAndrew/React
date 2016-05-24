@@ -6,11 +6,11 @@ import {CommentForm} from './CommentForm';
 
 export let CommentBox = React.createClass({
 
-  getInitialState: function () {
+  getInitialState() {
     return {data: []};
   },
 
-  loadCommentsFromServer: function () {
+  loadCommentsFromServer() {
     console.log('loading');
     $.ajax({
       url: this.props.url,
@@ -24,29 +24,29 @@ export let CommentBox = React.createClass({
       }.bind(this)
     });
   },
-  handleCommentSubmit: function (comment) {
+
+  handleCommentSubmit(comment) {
     // TODO: submit to the server and refresh the list
-
-
     $.ajax({
       url: this.props.url,
       dataType: 'json',
       type: 'POST',
       data: comment,
-      success: function(data) {
+      success: function (data) {
         this.setState({data: data});
       }.bind(this),
-      error: function(xhr, status, err) {
+      error: function (xhr, status, err) {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
   },
-  componentDidMount: function () {
+
+  componentDidMount() {
     this.loadCommentsFromServer();
     setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   },
 
-  render: function () {
+  render() {
     return (
       <div className="commentBox">
         <h1>Comments</h1>
